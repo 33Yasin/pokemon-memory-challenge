@@ -1,0 +1,131 @@
+.base-exp-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    color: #333;
+    font-weight: bold;
+    padding: 4px 12px;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.08);
+    z-index: 2;
+}
+
+.pokemon-card {
+    width: 320px;
+    padding: 20px;
+    margin: 20px auto;
+    border-radius: 12px;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+    text-align: center;
+    font-family: 'Luckiest Guy', 'Orbitron', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    transition: all 0.3s ease-in-out;
+    position: relative;
+}
+
+.pokemon-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pokemon-name {
+    font-family: 'Orbitron', 'Luckiest Guy', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 2.1rem;
+    margin-bottom: 10px;
+    color: #333;
+    letter-spacing: 1px;
+}
+
+.pokemon-image {
+    width: 210px;
+    height: 210px;
+    object-fit: contain;
+    margin-bottom: 10px;
+}
+
+.pokemon-description {
+    font-size: 0.95rem;
+    margin: 15px 0;
+    color: #555;
+}
+
+.loading,
+.error {
+    text-align: center;
+    font-size: 1rem;
+    color: #999;
+}
+
+.pokemon-stats-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px 20px;
+    margin: 20px 0 0 0;
+    justify-items: center;
+}
+
+.stat-item {
+    background: #f0f4f8;
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 1rem;
+    color: #222;
+    min-width: 120px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+}
+
+@media (max-width: 1200px) {
+    .pokemon-card {
+        width: 220px;
+        padding: 14px;
+    }
+    .pokemon-image {
+        width: 140px;
+        height: 140px;
+    }
+    .pokemon-name {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 800px) {
+    .pokemon-card {
+        width: 170px;
+        padding: 8px;
+    }
+    .pokemon-image {
+        width: 100px;
+        height: 100px;
+    }
+    .pokemon-name {
+        font-size: 1.1rem;
+    }
+    .pokemon-description {
+        font-size: 0.85rem;
+    }
+}
+
+@media (max-width: 500px) {
+    .pokemon-card {
+        width: 98vw;
+        min-width: 0;
+        padding: 4px;
+    }
+    .pokemon-image {
+        width: 70vw;
+        height: 70vw;
+        max-width: 180px;
+        max-height: 180px;
+    }
+    .pokemon-name {
+        font-size: 1rem;
+    }
+    .pokemon-description {
+        font-size: 0.8rem;
+    }
+    .pokemon-stats-grid {
+        gap: 6px 8px;
+    }
+}
