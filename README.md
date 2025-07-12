@@ -1,5 +1,7 @@
 # Pokémon Memory Challenge
 
+![pokemon memory game](https://github.com/user-attachments/assets/b75f2486-0c33-41d7-a946-09cd78cdc94c)
+
 Bu proje, React ile geliştirilmiş bir Pokémon hafıza oyunudur. Amaç, her turda daha önce seçmediğiniz bir Pokémon kartını seçerek en yüksek skora ulaşmaktır. Oyun, kartların yerini ve içeriğini sürekli değiştirerek hafızanızı test eder.
 
 ## Oyun Kuralları
