@@ -3,7 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import './PokemonCard.css'
 
-const PokemonCard = ({ id }) => {
+const PokemonCard = ({ id, onClick, selected, disabled }) => {
 
     const [pokemon, setPokemon] = useState(null);
     const [species, setSpecies] = useState(null);
@@ -81,10 +81,14 @@ const PokemonCard = ({ id }) => {
 
     return (
         <div>
-            <div className="pokemon-card" style={{ background: cardBg }}>
+            <div 
+              className={`pokemon-card${selected ? ' selected' : ''}`} 
+              style={{ background: cardBg, cursor: disabled ? 'not-allowed' : 'pointer', outline: selected ? '' : 'none', opacity: disabled ? 0.6 : 1 }}
+              onClick={() => !disabled && onClick && onClick(id)}
+              tabIndex={disabled ? -1 : 0}
+            >
                 <div className="base-exp-badge" style={{ background: badgeBg }}>EXP: {baseExp}</div>
                 <h2 className="pokemon-name">{name.toUpperCase()}</h2>
-                {/* Görsel kutusu kaldırıldı, iki resim doğrudan kartta */}
                 <img src={image} alt={name} className='pokemon-image' />
                 {gif && <img src={gif} alt={name + ' gif'} className='pokemon-gif' />}
                 <div className="pokemon-stats-bottom">

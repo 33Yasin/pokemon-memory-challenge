@@ -20,7 +20,8 @@
     padding: 20px;
     margin: 0;
     border-radius: 12px;
-    border: 1px solid #ddd;
+    border: none;
+    outline: none;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
     background-color: #fafafa;
     text-align: center;
@@ -36,6 +37,13 @@
     cursor: pointer;
     transform: scale(1.02);
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+}
+
+.pokemon-card:focus {
+    outline: none;
+}
+.pokemon-card:active {
+    outline: none;
 }
 
 .pokemon-name {
@@ -137,6 +145,36 @@
     font-size: 1.1rem;
     font-weight: bold;
     color: #333;
+}
+
+.base-exp-badge, .stat-item {
+    position: relative;
+    overflow: hidden;
+}
+
+.base-exp-badge::after, .stat-item::after {
+    content: '';
+    position: absolute;
+    top: -40%;
+    left: -60%;
+    width: 160%;
+    height: 180%;
+    background: linear-gradient(120deg, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.08) 60%, rgba(255,255,255,0.00) 100%);
+    pointer-events: none;
+    transform: skewX(-20deg) translateX(0);
+    transition: transform 0.7s cubic-bezier(.4,1.6,.6,1);
+}
+
+.pokemon-card:hover .base-exp-badge::after,
+.pokemon-card:hover .stat-item::after {
+    transform: skewX(-20deg) translateX(60%);
+}
+
+.pokemon-card.selected {
+    z-index: 3;
+    border: none;
+    outline: none;
+    box-shadow: none;
 }
 
 @media (max-width: 1200px) {

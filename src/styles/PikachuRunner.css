@@ -1,0 +1,28 @@
+.pikachu-runner {
+  position: fixed;
+  left: -120px;
+  bottom: 5px;
+  width: 150px;
+  height: auto;
+  z-index: 1001;
+  pointer-events: none;
+  animation: pikachu-run 8s linear infinite, pikachu-bounce 0.5s ease-in-out infinite;
+}
+
+@keyframes pikachu-run {
+  0% {
+    left: -120px;
+  }
+  100% {
+    left: 100vw;
+  }
+}
+
+@keyframes pikachu-bounce {
+  0%, 100% {
+    bottom: 5px;
+  }
+  50% {
+    bottom: 20px;
+  }
+} 

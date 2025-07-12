@@ -1,12 +1,48 @@
-# React + Vite
+# Pokémon Memory Challenge
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Bu proje, React ile geliştirilmiş bir Pokémon hafıza oyunudur. Amaç, her turda daha önce seçmediğiniz bir Pokémon kartını seçerek en yüksek skora ulaşmaktır. Oyun, kartların yerini ve içeriğini sürekli değiştirerek hafızanızı test eder.
 
-Currently, two official plugins are available:
+## Oyun Kuralları
+- Oyun başladığında 2 satır x 6 sütun olmak üzere toplam 12 Pokémon kartı ekranda görünür.
+- Bir karta tıkladığınızda:
+  - Seçtiğiniz kart dahil 5 kartın içeriği tamamen değişir.
+  - Tüm kartların yeri rastgele karışır (shuffle).
+- Aynı kartı tekrar seçerseniz oyun biter.
+- Her doğru seçimde skorunuz 1 artar.
+- En yüksek skorunuz (Highest Score) localStorage ile kalıcı olarak tutulur.
+- Doğru seçimde sesli bildirim (correct-sound), oyun bittiğinde ise farklı bir ses (fail-sound) çalar.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Kurulum ve Çalıştırma
 
-## Expanding the ESLint configuration
+1. **Projeyi klonlayın:**
+   ```bash
+   git clone <repo-url>
+   cd pokemon-memory-challenge
+   ```
+2. **Bağımlılıkları yükleyin:**
+   ```bash
+   npm install
+   ```
+3. **Projeyi başlatın:**
+   ```bash
+   npm run dev
+   ```
+4. Tarayıcınızda `http://localhost:5173` adresini açarak oyunu oynayabilirsiniz.
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## Kullanılan Teknolojiler
+- [React](https://react.dev/)
+- [Vite](https://vitejs.dev/)
+- [Axios](https://axios-http.com/) (Pokémon API'den veri çekmek için)
+- [PokéAPI](https://pokeapi.co/) (Veri kaynağı)
+
+## Oyun Ekranı
+- Skor ve en yüksek skor üstte gösterilir.
+- Kartlar modern ve responsive bir gridde yer alır.
+- Oyun bittiğinde ekranın ortasında büyük bir mesaj ve yeniden başlat butonu çıkar.
+
+## Katkı
+Katkıda bulunmak isterseniz lütfen bir fork oluşturun ve pull request gönderin.
+
+---
+
+Her türlü öneri ve geri bildiriminiz için teşekkürler!
