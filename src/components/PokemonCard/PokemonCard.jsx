@@ -37,13 +37,6 @@ const PokemonCard = ({ id }) => {
 
     const attackStat = pokemon.stats.find((stat) => stat.stat.name === 'attack')?.base_stat || 'N/A';
     const defenseStat = pokemon.stats.find((stat) => stat.stat.name === 'defense')?.base_stat || 'N/A';
-    const specialAttackStat = pokemon.stats.find((stat) => stat.stat.name === 'special-attack')?.base_stat || 'N/A';
-    const specialDefenseStat = pokemon.stats.find((stat) => stat.stat.name === 'special-defense')?.base_stat || 'N/A';
-    const speedStat = pokemon.stats.find((stat) => stat.stat.name === 'speed')?.base_stat || 'N/A';
-    const hpStat = pokemon.stats.find((stat) => stat.stat.name === 'hp')?.base_stat || 'N/A';
-    const description = species.flavor_text_entries.find(
-      (entry) => entry.language.name === 'en'
-    )?.flavor_text.replace(/\f/g, ' ') || 'No description available.';
 
     const mainType = pokemon.types[0].type.name;
     const typeColors = {
@@ -90,14 +83,19 @@ const PokemonCard = ({ id }) => {
                 <div className="base-exp-badge" style={{ background: badgeBg }}>EXP: {baseExp}</div>
                 <h2 className="pokemon-name">{name.toUpperCase()}</h2>
                 <img src={image} alt={name} className='pokemon-image' />
-                <p className="pokemon-description">{description}</p>
-                <div className="pokemon-stats-grid">
-                  <div className="stat-item" style={{ background: badgeBg }}><strong>HP:</strong> {hpStat}</div>
-                  <div className="stat-item" style={{ background: badgeBg }}><strong>Attack:</strong> {attackStat}</div>
-                  <div className="stat-item" style={{ background: badgeBg }}><strong>Defense:</strong> {defenseStat}</div>
-                  <div className="stat-item" style={{ background: badgeBg }}><strong>Special Attack:</strong> {specialAttackStat}</div>
-                  <div className="stat-item" style={{ background: badgeBg }}><strong>Special Defense:</strong> {specialDefenseStat}</div>
-                  <div className="stat-item" style={{ background: badgeBg }}><strong>Speed:</strong> {speedStat}</div>
+                <div className="pokemon-stats-bottom">
+                  <div className="stat-item attack" style={{ background: badgeBg }}>
+                    <div className="stat-circle">
+                      <span className="stat-label">A</span>
+                      <span className="stat-value">{attackStat}</span>
+                    </div>
+                  </div>
+                  <div className="stat-item defense" style={{ background: badgeBg }}>
+                    <div className="stat-circle">
+                      <span className="stat-label">D</span>
+                      <span className="stat-value">{defenseStat}</span>
+                    </div>
+                  </div>
                 </div>
             </div>
         </div>

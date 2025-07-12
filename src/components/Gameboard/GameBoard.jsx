@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import CardGrid from '../CardGrid/CardGrid';
 import './GameBoard.css';
 
-const TOTAL_CARDS = 16;
+const TOTAL_CARDS = 12;
 const MAX_POKEMON_ID = 151;
 
 const GameBoard = () => {
