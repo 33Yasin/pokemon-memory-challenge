@@ -77,12 +77,16 @@ const PokemonCard = ({ id }) => {
     }
     const cardBg = blendWithWhite(badgeBg, 0.7); // %70 beyaz karışımı, soft pastel
 
+    const gif = pokemon.sprites.versions['generation-v']['black-white'].animated.front_default;
+
     return (
         <div>
             <div className="pokemon-card" style={{ background: cardBg }}>
                 <div className="base-exp-badge" style={{ background: badgeBg }}>EXP: {baseExp}</div>
                 <h2 className="pokemon-name">{name.toUpperCase()}</h2>
+                {/* Görsel kutusu kaldırıldı, iki resim doğrudan kartta */}
                 <img src={image} alt={name} className='pokemon-image' />
+                {gif && <img src={gif} alt={name + ' gif'} className='pokemon-gif' />}
                 <div className="pokemon-stats-bottom">
                   <div className="stat-item attack" style={{ background: badgeBg }}>
                     <div className="stat-circle">
